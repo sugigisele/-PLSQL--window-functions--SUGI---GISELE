@@ -58,6 +58,37 @@ products → transactions:
 One product can appear in many transactions (1-to-many).  
 Foreign key: transactions.product_id references products.product_id
 
+4. Queries
+
+All SQL scripts are located in the /scripts/ directory.
+- create_schema.sql — schema + sample data
+- ranking_functions.sql
+- aggregate_functions.sql
+- navigation_functions.sql
+- distribution_functions.sql
+(Each script contains comments and is ready to run in MySQL / XAMPP)
+
+---
+ 5. Screenshots
+Folder: /screenshots/  
+The screenshots should display results from all queries which include ranking, aggregate, navigation and distribution.
+- ranking.png
+- aggregate.png
+- navigation.png
+- distribution.png
+&gt; All screenshots need to show the result columns together with the window-function outputs.
+
+ 6. Results Analysis (3 layers)
+ ## Descriptive
+  The sales data shows a moderate level of concentration because most revenue comes from a small group of customers and products. The daily sales pattern shows periodic       increases between extended periods of minimal sales activity.
+
+ ## Diagnostic
+ The main group of customers resides in Kigali where they tend to buy expensive clothing items which include jackets and dresses. The data reveals that the highest-value      transactions occur in groups which correspond to product launches and promotional events.
+
+## Prescriptive
+1. The organization needs to direct its inventory management efforts toward the highest-performing SKUs and customers by using reorder point and safety stock metrics. 
+2. The company should focus on reaching out to customers who belong to the first and second quartile by offering retention deals and cross-selling opportunities. 
+3. The organization should apply 7-day and 3-month moving averages to track ordering patterns while identifying days with unexpected negative growth for further examination.
 
 
 
