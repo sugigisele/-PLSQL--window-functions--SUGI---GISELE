@@ -1,1 +1,29 @@
 
+WITH monthly_sales AS (
+    SELECT 
+        DATE_FORMAT(sale_date, '%Y-%m-01') AS month,
+        CAST(DATE_FORMAT(sale_date, '%Y%m') AS UNSIGNED) AS month_num,
+        SUM(amount) AS monthly_total
+    FROM transactions
+    GROUP BY DATE_FORMAT(sale_date, '%Y-%m-01'), CAST(DATE_FORMAT(sale_date, '%Y%m') AS UNSIGNED)
+)
+SELECT 
+    month,
+    monthly_total,
+    
+    SUM(monthly_total) OVER (
+        ORDER BY month_num 
+        ROWS BETWEEN UNBOUNDED PRECEDING AND CURRENT ROW
+    ) AS running_total_rows,
+    
+    SUM(monthly_total) OVER (
+        ORDER BY month_num 
+        RANGE BETWEEN UNBOUNDED PRECEDING AND CURRENT ROW
+    ) AS running_total_range,
+    
+    AVG(monthly_total) OVER (
+        ORDER BY month_num 
+        ROWS BETWEEN 2 PRECEDING AND CURRENT ROW
+    ) AS moving_avg_rows
+FROM monthly_sales
+ORDER BY month;
