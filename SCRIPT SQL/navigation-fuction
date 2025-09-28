@@ -1,1 +1,29 @@
-
+-- Month-over-month growth with LAG() and LEAD()
+WITH monthly_sales AS (
+    SELECT 
+        DATE_FORMAT(sale_date, '%Y-%m-01') AS month,
+        SUM(amount) AS monthly_total
+    FROM transactions
+    GROUP BY DATE_FORMAT(sale_date, '%Y-%m-01')
+)
+SELECT 
+    month,
+    monthly_total,
+    -- Previous month's sales
+    LAG(monthly_total, 1) OVER (ORDER BY month) AS prev_month,
+    -- Next month's sales
+    LEAD(monthly_total, 1) OVER (ORDER BY month) AS next_month,
+    -- MoM growth percentage
+    ROUND(
+        (monthly_total - LAG(monthly_total, 1) OVER (ORDER BY month)) / 
+        LAG(monthly_total, 1) OVER (ORDER BY month) * 100, 
+        2
+    ) AS mom_growth,
+    -- Forward-looking growth projection
+    ROUND(
+        (LEAD(monthly_total, 1) OVER (ORDER BY month) - monthly_total) / 
+        monthly_total * 100, 
+        2
+    ) AS projected_growth
+FROM monthly_sales
+ORDER BY month;
