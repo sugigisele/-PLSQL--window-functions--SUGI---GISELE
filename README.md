@@ -108,6 +108,10 @@ Mode Analytics. "SQL Window Functions". 2023. https://mode.com/sql-tutorial/sql-
 Khan Academy. "Cumulative distribution function". 2023. https://
 
 
+# 8. Integrity Statement
+  All sources were properly cited. Implementations and analysis represent original work. No AI-generated content was copied without attribution or adaptation.
+
+
 
 
 
