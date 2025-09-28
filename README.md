@@ -40,4 +40,4 @@ Define exactly 5 measurable goals:
  Metric: Trend analysis for short-term sales stability or volatility.
 
 Step 3: Database Schema
-Design minimum 3 related tables with foreign keys.
+Design minimum 3 related tables with foreign keys. 
