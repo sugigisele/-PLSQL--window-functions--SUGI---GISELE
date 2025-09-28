@@ -91,6 +91,23 @@ The screenshots should display results from all queries which include ranking, a
 3. The organization should apply 7-day and 3-month moving averages to track ordering patterns while identifying days with unexpected negative growth for further examination.
 
 
+# Step 7: References
+
+Oracle. "Window Functions". Oracle Documentation, 2023. https://docs.oracle.com/en/database/oracle/oracle-database/19/sqlrf/Window-functions.html
+
+Microsoft. "OVER Clause (Transact-SQL)". Microsoft Docs, 2023. https://docs.microsoft.com/en-us/sql/t-sql/queries/select-over-clause-transact-sql
+
+PostgreSQL Global Development Group. "Window Functions". PostgreSQL Documentation, 2023. https://www.postgresql.org/docs/current/tutorial-window.html
+
+Ben-Gan, Itzik. "T-SQL Window Functions: For data analysis and beyond". Microsoft Press, 2022.
+
+DataCamp. "SQL Window Functions Tutorial". 2023. https://www.datacamp.com/community/tutorials/sql-window-functions
+
+Mode Analytics. "SQL Window Functions". 2023. https://mode.com/sql-tutorial/sql-window-functions/
+
+Khan Academy. "Cumulative distribution function". 2023. https://
+
+
 
 
 
