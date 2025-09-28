@@ -47,8 +47,10 @@ Tables
 - `transactions`: Sales records (transaction_id, customer_id, product_id, sale_date, amount)
 
  ER Diagram
- 
-Relationships that are in ER Diagram,
+
+ <img width="1100" height="510" alt="Screenshot 2025-09-28 181552" src="https://github.com/user-attachments/assets/ab00de08-482d-4eab-9f82-e065e947caf5" />
+
+ Relationships that are in ER Diagram,
 customers → transactions:
 One customer can have many transactions (1-to-many).  
 Foreign key: transactions.customer_id references customers.customer_id  
