@@ -20,6 +20,9 @@ FOREIGN KEY (customer_id) REFERENCES customers(customer_id),
 FOREIGN KEY (product_id) REFERENCES products(product_id)  
 );
 
+INSERT INTO customers VALUES (1001, 'John Doe', 'Kigali');
+INSERT INTO products VALUES (2001, 'Coffee Beans', 'Beverages');
+INSERT INTO transactions VALUES (3001, 1001, 2001, '2024-01-15', 25000.00);
 
 
 
