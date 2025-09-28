@@ -39,5 +39,25 @@ Define exactly 5 measurable goals:
  Goal: Smooth out volatility in sales by providing a rolling 3-month average.
  Metric: Trend analysis for short-term sales stability or volatility.
 
-Step 3: Database Schema
-Design minimum 3 related tables with foreign keys. 
+Step 3: Database Schema & ER Diagram.
+Database Schema
+Tables
+- `customers`: Customer info (customer_id, name, region)
+- `products`: Product catalog (product_id, name, category)
+- `transactions`: Sales records (transaction_id, customer_id, product_id, sale_date, amount)
+
+ ER Diagram
+ 
+Relationships that are in ER Diagram,
+customers → transactions:
+One customer can have many transactions (1-to-many).  
+Foreign key: transactions.customer_id references customers.customer_id  
+products → transactions:  
+One product can appear in many transactions (1-to-many).  
+Foreign key: transactions.product_id references products.product_id
+
+
+
+
+
+
