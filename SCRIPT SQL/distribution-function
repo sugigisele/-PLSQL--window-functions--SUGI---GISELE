@@ -1,1 +1,19 @@
-
+WITH customer_spending AS (
+    SELECT 
+        c.customer_id,
+        c.name,
+        c.region,
+        SUM(t.amount) AS total_spent
+    FROM transactions t
+    JOIN customers c ON t.customer_id = c.customer_id
+    GROUP BY c.customer_id, c.name, c.region
+)
+SELECT 
+    customer_id,
+    name,
+    region,
+    total_spent,
+    NTILE(4) OVER (ORDER BY total_spent DESC) AS quartile,
+    CUME_DIST() OVER (ORDER BY total_spent) AS cumulative_dist
+FROM customer_spending
+ORDER BY total_spent DESC;
